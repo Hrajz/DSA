@@ -1,18 +1,21 @@
-https://www.hackerrank.com/challenges/c-tutorial-conditional-if-else/problem?isFullScreen=true
+https://www.hackerrank.com/challenges/c-tutorial-for-loop/problem?isFullScreen=true
 
 #include <iostream>
 using namespace std;
-int main()
-{
+int main() {
     int a,b;
-    string c[]={"","one","two","three","four","five","six","seven","eight","nine"};
-    cin>>a;
-    for(int i=1;i<=a;i++)
+    char* str[] = {"one","two","three","four","five","six","seven","eight","nine","even","odd"};
+    cin>>a>>b;
+    for(int i=a;i<=b;i++)
+    {
+        if(i<=9)
         {
-            if(i==a && i<10)
-            {cout<<c[a];}
-            
+            cout<<str[i-1]<<"\n";
         }
-        if(a>9)
-        {cout<<"Greater than 9";}
+        else
+        {
+            cout<<str[9+(i%2)]<<"\n";
+        }
+    }
+    return 0;
 }

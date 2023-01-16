@@ -1,0 +1,29 @@
+#include<unordered_set>
+class Solution {
+public:
+int reverse(int n)
+{
+   int sum=0;
+  while(n%10!=n)
+  {
+      sum=(sum*10)+(n%10);
+      n=n/10;
+  }
+  sum=(sum*10)+(n%10);
+  return sum;
+}
+    int countDistinctIntegers(vector<int>& nums) {
+        unordered_set<int>ans;
+        int res=0;
+        int n=nums.size();
+       for(auto i=0;i<n;i++)
+       {
+           nums.emplace_back(reverse(nums[i]));
+       }
+       for(auto i=0;i<nums.size();i++)
+        {
+             ans.insert(nums[i]);
+        }
+            return ans.size();
+    }
+};
